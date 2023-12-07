@@ -1,0 +1,128 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
+
+/* color palette*/
+:root {
+  --color-primary: #000;
+  --color-secondary: #555;
+  --color-tertiary: #CCC;
+  --color-bg: #FFF;
+  --color-txt-on-light: #222;
+  --color-txt-on-dark: #FFF;
+  --width-content: 1000px;
+  --alpha-ctrl: 0.8;
+}
+
+/* CSS reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+/* styling starts here */
+body {
+  font-family: 'Hedvig Letters Sans', sans-serif;
+  /* font-size: 1rem; */
+
+  background-image: url("/assets/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-color: var(--color-bg); */
+
+  height: 400vh;
+  /* overflow-y: scroll; */
+}
+
+#nav-bar-container {
+  position: fixed;
+  height: 44px;
+  width: 100%;
+  background-color: rgba(50, 50, 50, var(--alpha-ctrl));
+}
+
+#nav-bar {
+  max-width: var(--width-content);
+  height: 100%;
+  margin: 0 auto;
+  /* border: 1px dashed red; */
+}
+
+/* Edit here */
+
+.nav-img {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+  /* border: 1px solid aqua; */
+}
+
+#nav-bar img {
+  display: block;
+  max-height: 100%;
+  width: auto;
+}
+
+#logo {
+  float: left;
+}
+
+#menu {
+  float: right;
+}
+
+#nav-bar ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  /* border: 1px dashed cyan; */
+  float: right;
+}
+
+#nav-bar .nav-link {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-txt-on-dark);
+  font-size: 1rem;
+  padding: 10px;
+  text-decoration: none;
+  /* border: 1px dashed red; */
+}
+
+#nav-bar a {
+  opacity: var(--alpha-ctrl);
+  transition: opacity 0.3s ease;
+}
+
+#nav-bar a:hover {
+  opacity: 1;
+}
+
+#apple {
+  display: flex;
+  /* border: 2px solid greenyellow; */
+}
+
+#apple img {
+  width: 200px;
+  margin: 100px auto;
+}
+
+
+@media screen and (min-width: 480px) {
+  #menu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #nav-bar ul {
+    display: block;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(50, 50, 50, var(--alpha-ctrl));
+  }
+}
