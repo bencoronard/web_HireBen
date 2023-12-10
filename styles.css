@@ -9,11 +9,12 @@
 
 body {
   font-family: 'Hedvig Letters Sans', sans-serif;
+  height: 200vh;
+  background-color: #fff;
+
   background-image: url("/assets/img/manhattan.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 200vh;
-  /* background-color: #fff; */
 }
 
 #container_nav {
@@ -21,7 +22,7 @@ body {
   top: 0;
   width: 100%;
   height: 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 #nav_bar {
@@ -30,8 +31,20 @@ body {
   height: 100%;
   max-width: 1000px;
   margin: auto;
-  border: 2px dashed red;
-  /* padding: 0 5px; */
+  padding: 0 5px;
+  /* border: 2px dashed red; */
+}
+
+a {
+  display: inline-block;
+  height: 100%;
+  color: #fff;
+  opacity: 0.5;
+  transition: opacity 350ms ease;
+}
+
+a:hover {
+  opacity: 1;
 }
 
 #link_nav {
@@ -40,38 +53,74 @@ body {
   height: 100%;
   justify-content: center;
   align-items: center;
-  border: 2px solid greenyellow;
+  /* border: 2px solid greenyellow; */
 }
 
 #link_nav li {
   flex: 1;
   list-style: none;
   text-align: center;
-  border: 1px dashed yellow;
+  /* border: 1px dashed yellow; */
 }
 
-a {
-  display: inline-block;
+#logo svg {
+  fill: #fff;
   height: 100%;
-  color: #fff;
-  opacity: 0.5;
-  transition: opacity 400ms ease;
+  width: auto;
+  padding: 3px;
+  /* border: 2px solid cyan; */
 }
 
-a:hover {
-  /* background-color: aquamarine; */
-  opacity: 1;
-}
-
-.bi-linkedin, .bi-github, #logo svg, #hamburger svg {
-  fill:#fff;
+#link_social svg {
+  fill: #fff;
   height: 100%;
   width: auto;
   padding: 6px;
-  border: 1px dashed red;
+  /* border: 1px dashed red; */
 }
 
 #link_social {
   display: flex;
-  border: 2px solid cyan;
+  flex-wrap: nowrap;
+  /* position: relative;
+  right: 0px; */
+  /* border: 1px dashed cyan; */
+}
+
+#hamburger svg {
+  position: relative;
+  right: 0px;
+  fill: #fff;
+  height: 100%;
+  width: auto;
+  /* padding: 2px; */
+  /* border: 2px solid cyan; */
+}
+
+@media only screen and (min-width: 600px) {
+  #hamburger {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #link_nav {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    width: 100%;
+    height: 90vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid cyan;
+  }
+
+  #link_nav li {
+    border: 1px dashed red;
+  }
+
+  #link_social {
+    justify-content: flex-end;
+    width: 100%;
+  }
 }
