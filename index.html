@@ -22,13 +22,15 @@
           </a>
         </div>
 
-        <ul id="link_nav">
-          <li><a href="#">Option1</a></li>
-          <li><a href="#">Option2</a></li>
-          <li><a href="#">Option3</a></li>
-          <li><a href="#">Option4</a></li>
-          <li><a href="#">Option5</a></li>
-        </ul>
+        <div id="menu_bar">
+          <ul id="nav_links">
+            <li><a href="#">Option1</a></li>
+            <li><a href="#">Option2</a></li>
+            <li><a href="#">Option3</a></li>
+            <li><a href="#">Option4</a></li>
+            <li><a href="#">Option5</a></li>
+          </ul>
+        </div>
 
         <div id="link_social">
           <a href="https://github.com/bencoronard" target="_blank">
@@ -44,7 +46,7 @@
         </div>
 
         <div id="hamburger">
-          <a href="#">
+          <a href="https://www.google.com/">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
             </svg>
@@ -53,6 +55,20 @@
 
       </nav>
     </div>
+
+
+    <script>
+      document.getElementById("hamburger").addEventListener("click", function(e) {
+        e.preventDefault(); // Prevent the default behavior of the link
+        let menuBar = document.getElementById("menu_bar");
+        if (menuBar.style.display === "none" || menuBar.style.display === "") {
+          menuBar.style.display = "block"; // Show the menu if it's hidden
+        } else {
+          menuBar.style.display = "none"; // Hide the menu if it's visible
+        }
+      });
+    </script>
+
 
   </body>
 
