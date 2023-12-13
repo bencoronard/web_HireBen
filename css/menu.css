@@ -1,0 +1,106 @@
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 2rem;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+#logo svg {
+  fill: #fff;
+  height: 100%;
+  width: auto;
+  padding: 3px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 5px;
+}
+
+nav a {
+  display: inline-block;
+  height: 100%;
+  color: #fff;
+  opacity: 0.5;
+  transition: opacity 350ms ease;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+#menu {
+  width: 100%;
+}
+
+#menu ul {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid greenyellow;
+}
+
+#menu ul li {
+  flex: 1;
+  list-style: none;
+  text-align: center;
+  border: 1px dashed red;
+}
+
+#social {
+  display: flex;
+  flex-wrap: nowrap;
+  /* border: 1px dashed cyan; */
+}
+
+#social svg {
+  fill: #fff;
+  height: 100%;
+  width: auto;
+  padding: 6px;
+}
+
+#hamburger svg {
+  position: relative;
+  right: 0px;
+  fill: #fff;
+  height: 100%;
+  width: auto;
+  padding: 6px;
+  border: 1px solid cyan;
+}
+
+@media only screen and (min-width: 600px) {
+  #hamburger {
+    display: none;
+  }
+}
+
+/* Edit from here */
+@media only screen and (max-width: 600px) {
+
+  #social {
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  #menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    /* height: 100vh; */
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #menu ul {
+    display: block;
+  }
+}
