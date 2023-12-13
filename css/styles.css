@@ -12,7 +12,7 @@ body {
   height: 200vh;
   background-color: #fff;
 
-  background-image: url("/assets/img/manhattan.jpg");
+  background-image: url("/img/manhattan.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -124,13 +124,30 @@ a:hover {
     position: fixed;
     left: 0;
     top: 2rem;
-    /* height: 0; */
+    /* height: 100vh; */
     background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #menu_bar[opened] {
+    animation: slideDown 500ms forwards;
+  }
+
+  #menu_bar[closed] {
+    animation: slideUp 500ms forwards;
+  }
+
+  @keyframes slideDown {
+    0% {height: 0;}
+    100% {height: 100vh;}
+  }
+
+  @keyframes slideUp {
+    0% {height: 100vh;}
+    100% {height: 0;}
   }
 
   #nav_links {
     display: block;
-    /* height: 100vh; */
   }
 
 }

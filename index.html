@@ -4,9 +4,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="icon" type="image/svg+xml" href="img/incognito.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/menu.css">
     <title>HireBen</title>
-    <link rel="icon" type="image/svg+xml" href="assets/img/incognito.svg">
-    <link rel="stylesheet" href="styles.css">
   </head>
 
   <body>
@@ -22,6 +24,7 @@
           </a>
         </div>
 
+        <input type="checkbox" id="menu_toggle">
         <div id="menu_bar">
           <ul id="nav_links">
             <li><a href="#">Option1</a></li>
@@ -46,30 +49,19 @@
         </div>
 
         <div id="hamburger">
-          <a href="https://www.google.com/">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+          <label for="menu_toggle">
+            <svg id="hamburger_menu" viewBox="0 0 100 100">
+              <rect class="line top" width="100" height="20"></rect>
+              <rect class="line mid" width="100" height="20" y="40"></rect>
+              <rect class="line bot" width="100" height="20" y="80"></rect>
             </svg>
-          </a>
+          </label>
         </div>
 
       </nav>
     </div>
 
-
-    <script>
-      document.getElementById("hamburger").addEventListener("click", function(e) {
-        e.preventDefault(); // Prevent the default behavior of the link
-        let menuBar = document.getElementById("menu_bar");
-        if (menuBar.style.display === "none" || menuBar.style.display === "") {
-          menuBar.style.display = "block"; // Show the menu if it's hidden
-        } else {
-          menuBar.style.display = "none"; // Hide the menu if it's visible
-        }
-      });
-    </script>
-
-
+    <!-- <script src="script.js"></script> -->
   </body>
 
 </html>
