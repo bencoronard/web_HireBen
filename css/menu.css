@@ -127,6 +127,7 @@ nav a:hover {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
   }
+
   #menu_toggle:checked ~ #menu {
     transform: scale(1, 1);
   }
@@ -140,4 +141,30 @@ nav a:hover {
     opacity: 1;
     transition: opacity 300ms ease;
   }
+
+  /* Hamburger state change */
+
+  #hamburger svg .line {
+    transition: 400ms;
+    transform-origin: center;
+  }
+
+  #menu_toggle:checked ~ #hamburger svg .top,
+  #menu_toggle:checked ~ #hamburger svg .bot {
+    y: 40%;
+  }
+
+  #menu_toggle:checked ~ #hamburger svg .top {
+    rotate: 45deg;
+  }
+
+  #menu_toggle:checked ~ #hamburger svg .bot {
+    rotate: -45deg;
+  }
+
+  #menu_toggle:checked ~ #hamburger svg .mid {
+    opacity: 0;
+  }
+
+  /* ---------------------- */
 }
