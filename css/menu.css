@@ -1,170 +1,168 @@
 header {
   position: fixed;
-  top: 0;
   width: 100%;
   height: 2.5rem;
   background-color: rgba(0, 0, 0, 0.75);
 }
-
-#logo svg {
-  fill: #fff;
-  height: 100%;
-  width: auto;
-  padding: 3px;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
   height: 100%;
-  max-width: 1000px;
-  margin: auto;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 5px;
+  /* border: 1px dashed greenyellow; */
 }
-
-nav a {
-  display: inline-block;
-  height: 100%;
-  color: #fff;
-  opacity: 0.5;
-  transition: opacity 350ms ease;
-}
-
-nav a:hover {
-  opacity: 1;
-}
-
-#menu {
-  width: 100%;
-}
-
-#menu ul {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  /* border: 2px solid greenyellow; */
-}
-
-#menu ul li {
-  flex: 1;
-  list-style: none;
-  text-align: center;
-  /* border: 1px dashed red; */
-}
-
-#social {
-  display: flex;
-  flex-wrap: nowrap;
-  /* border: 1px dashed cyan; */
-}
-
-#social svg {
-  fill: #fff;
-  height: 100%;
-  width: auto;
-  padding: 6px;
-}
-
-#hamburger {
-  display: none;
-}
-
-#hamburger label {
-  cursor: pointer;
-  opacity: 0.5;
-  transition: opacity 350ms ease;
-}
-
-#hamburger label:hover {
-  opacity: 1;
-}
-
-#hamburger svg {
-  position: relative;
-  right: 0px;
-  fill: #fff;
-  height: 100%;
-  width: auto;
-  padding: 6px;
-  /* border: 1px solid cyan; */
-}
-
 #menu_toggle {
   display: none;
 }
 
-/* Edit from here */
+
+
+
+nav .icon_wrapper {
+  display: inline-flex;
+  height: 100%;
+  width: auto;
+  padding: 5px;
+  border: 1px dashed red;
+}
+nav .icon_wrapper svg {
+  fill: #fff;
+}
+
+
+
+
+
+nav a, nav label {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 350ms ease;
+}
+nav a:hover, nav label:hover {
+  opacity: 1;
+}
+
+
+
+
+
+nav .container {
+  border: 1px dashed cyan;
+}
+nav > * {
+  flex-grow: 0;
+}
+
+
+
+
+
+nav .social {
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+
+
+
+nav .menu {
+  flex-grow: 1;
+}
+nav .menu ul {
+  list-style: none;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid red;
+}
+nav .menu ul li {
+  border: 1px solid plum;
+}
+
+
+
+
+
+nav .hamburger svg .line {
+  transition: 400ms;
+  transform-origin: center;
+}
+#menu_toggle:checked ~ .hamburger svg .top,
+#menu_toggle:checked ~ .hamburger svg .bot {
+  y: 40%;
+}
+#menu_toggle:checked ~ .hamburger svg .top {
+  rotate: 45deg;
+}
+#menu_toggle:checked ~ .hamburger svg .mid {
+  opacity: 0;
+}
+#menu_toggle:checked ~ .hamburger svg .bot {
+  rotate: -45deg;
+}
+nav .hamburger {
+  display: none;
+}
+
+
+
+
+
 @media only screen and (max-width: 600px) {
 
-  #hamburger {
-    display: block;
+  nav .hamburger {
+    display: inline;
   }
 
-  #social {
-    justify-content: flex-end;
-    width: 100%;
+
+
+  nav .social {
+    flex-grow: 1;
   }
 
-  #menu {
-    display: block;
+
+
+  nav .menu {
     position: absolute;
     left: 0;
     top: 100%;
+    width: 100%;
     height: 100vh;
-    transform: scale(1, 0);
+    background-color: rgba(0, 0, 0, 0.50);
+
     transform-origin: top;
+    transform: scale(1, 0);
     transition: 500ms;
-    background-color: rgba(0, 0, 0, 0.5);
+  }
+  nav .menu ul {
+    flex-direction: column;
+    max-height: 50%;
+    align-items: flex-start;
   }
 
-  #menu ul {
-    display: block;
-  }
 
-  #menu a {
+
+
+
+  nav .menu a {
     opacity: 0;
     transition: opacity 150ms ease-in-out;
   }
-
-  #menu_toggle:checked ~ #menu {
+  #menu_toggle:checked ~ .menu {
     transform: scale(1, 1);
   }
-
-  #menu_toggle:checked ~ #menu a {
+  #menu_toggle:checked ~ .menu a {
     opacity: 0.6;
     transition: opacity 400ms ease-in-out 250ms;
   }
-
-  #menu_toggle:checked ~ #menu a:hover {
+  #menu_toggle:checked ~ .menu a:hover {
     opacity: 1;
-    transition: opacity 300ms ease;
+    transition: opacity 350ms ease;
   }
 
-  /* Hamburger state change */
-
-  #hamburger svg .line {
-    transition: 400ms;
-    transform-origin: center;
-  }
-
-  #menu_toggle:checked ~ #hamburger svg .top,
-  #menu_toggle:checked ~ #hamburger svg .bot {
-    y: 40%;
-  }
-
-  #menu_toggle:checked ~ #hamburger svg .top {
-    rotate: 45deg;
-  }
-
-  #menu_toggle:checked ~ #hamburger svg .bot {
-    rotate: -45deg;
-  }
-
-  #menu_toggle:checked ~ #hamburger svg .mid {
-    opacity: 0;
-  }
-
-  /* ---------------------- */
 }
