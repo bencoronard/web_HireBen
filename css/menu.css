@@ -8,7 +8,6 @@ nav {
   justify-content: space-between;
   height: 100%; max-width: 1200px;
   margin: 0 auto; padding: 0 5px;
-  /* border: 1px dashed greenyellow; */
 }
 nav > * {
   flex-grow: 0;
@@ -16,25 +15,17 @@ nav > * {
 #menu_toggle {
   display: none;
 }
-
-/* nav .container {
+nav .menu {
   border: 1px dashed cyan;
-} */
-
+}
 nav .icon_wrapper {
   display: inline-flex;
   height: 100%; width: auto;
   padding: 5px;
-  /* border: 1px dashed red; */
 }
 nav .icon_wrapper svg {
   fill: #fff;
 }
-
-
-
-
-
 nav a, nav label {
   color: #fff;
   text-decoration: none;
@@ -44,12 +35,46 @@ nav a, nav label {
 nav a:hover, nav label:hover {
   opacity: 1;
 }
+nav a {
+  background-color: rgba(137, 43, 226, 0.6);
+}
+
+
+
+nav .menu {
+  position: absolute;
+  display: block;
+  position: absolute;
+  left: 0; top: 100%;
+  width: 100%; height: 100vh;
+
+  transform-origin: top;
+  transform: scale(1, 0);
+  transition: 500ms;
+
+  background-color: rgba(0, 0, 0, 0.50);
+}
+nav .menu ul {
+  list-style: none;
+  height: 50%;
+  border: 1px solid red;
+}
+nav .menu ul li {
+  border: 1px solid plum;
+}
+
+
+
+
+
+
 
 
 
 
 
 nav .social {
+  flex-grow: 1;
   display: flex;
   justify-content: flex-end;
 }
@@ -58,57 +83,39 @@ nav .social {
 
 
 
-nav .menu {
-  flex-grow: 1;
-}
-nav .menu ul {
-  list-style: none;
+
+
+/* nav .menu ul li ul {
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: space-evenly;
-  border: 1px solid red;
-}
-nav .menu ul li {
-  border: 1px solid plum;
-}
-
-nav .menu ul li .submenu {
   position: absolute;
-  top: 100%;
-  left: 0;
+  top: 100%; left: 0;
   width: 100%; height: 2rem;
-  background-color: rgba(0, 0, 0, 0.5);
+} */
 
-  transform-origin: top;
-  transform: scale(1, 0);
-  opacity: 0;
-  transition: 300ms ease-out 100ms;
-}
-nav .menu ul li .submenu ul {
+/* nav .menu ul li ul {
   max-width: 1200px;
   margin: 0 auto;
   justify-content: space-evenly;
 }
 
-nav .menu ul li:hover .submenu {
+nav .menu ul li:hover ul {
   transform: scale(1, 1);
   opacity: 1;
 }
 
 
 
-nav .menu ul li .submenu ul li a {
+nav .menu ul li ul li a {
   opacity: 0;
 }
-nav .menu ul li:hover .submenu ul li a {
+nav .menu ul li:hover ul li a {
   opacity: 0.6;
   transition: opacity 400ms ease-in-out 250ms;
 }
-nav .menu ul li .submenu ul li a:hover {
+nav .menu ul li ul li a:hover {
   opacity: 1;
   transition: opacity 350ms ease;
-}
+} */
 
 
 
@@ -130,15 +137,19 @@ nav .hamburger svg .line {
 #menu_toggle:checked ~ .hamburger svg .bot {
   rotate: -45deg;
 }
-nav .hamburger {
-  display: none;
+#menu_toggle:checked ~ .menu {
+  transform: scale(1, 1);
+}
+#menu_toggle:checked ~ .menu a {
+  opacity: 0.6;
+  transition: opacity 400ms ease-in-out 250ms;
 }
 
 
 
 
 
-@media only screen and (max-width: 600px) {
+/* @media only screen and (max-width: 600px) {
 
   nav .hamburger {
     display: initial;
@@ -151,13 +162,12 @@ nav .hamburger {
   }
 
 
-  /* CHANGE HERE */
   
   nav .menu {
     display: block;
     position: absolute;
     left: 0; top: 100%;
-    width: 100%; height: 50vh;
+    width: 100%; height: 100vh;
     background-color: rgba(0, 0, 0, 0.50);
 
     transform-origin: top;
@@ -166,26 +176,31 @@ nav .hamburger {
 
     border: 1px dashed cyan;
   }
-  nav .menu ul {
+  nav .menu > ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    height: 75%;
+    padding-top: 1rem;
+    gap: 1rem;
   }
   nav .menu ul li {
-    width: 100%;
-    padding-left: 2rem;
+    display: flex;
+    justify-content: left;
   }
 
-  nav .menu .submenu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 50%; height: auto;
-    background-color: rgba(255, 255, 0, 0.75);
-    /* border: 1px dashed yellow; */
+  nav .menu ul a {
+    border: 1px solid greenyellow;
   }
 
-  /* CHANGE UNTIL HERE */
+  nav .menu ul li ul {
+    display: block;
+    height: 100%;
+  }
+
+  nav .menu ul li ul li {
+    padding: 0;
+  }
 
 
 
@@ -205,4 +220,4 @@ nav .hamburger {
     transition: opacity 350ms ease;
   }
 
-}
+} */
