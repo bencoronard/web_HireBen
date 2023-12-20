@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Hedvig Letters Sans', sans-serif;
-  /* height: 200vh; */
+  height: 200vh;
   background-color: #fff;
 
   background-image: url("/img/manhattan.jpg");
