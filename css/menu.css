@@ -1,9 +1,24 @@
+:root {
+  --c-header: rgba(0, 0, 0, 0.75);
+  --h-header: 2rem;
+  --c-navs: rgb(255,255,255);
+}
+
+
+
+
+
 header {
   position: fixed;
   width: 100%;
-  height: 2rem;
-  background-color: rgba(0, 0, 0, 0.75);
+  height: var(--h-header);
+  background-color: var(--c-header);
 }
+
+
+
+
+
 #menu_toggle {
   display: none;
 }
@@ -12,22 +27,11 @@ nav div.icon_wrapper {
   height: 100%;
   padding: 3px;
 }
-nav div.icon_wrapper > svg {
-  fill: #fff;
+nav div.icon_wrapper svg {
+  fill: var(--c-navs);
 }
 
 
-
-nav a, nav label {
-  color: #fff;
-  text-decoration: none;
-  opacity: 0.5;
-  transition: opacity 350ms ease;
-}
-nav a:hover, nav a:focus-within,
-nav label:hover {
-  opacity: 1;
-}
 
 
 
@@ -44,90 +48,7 @@ nav > div {
   justify-content: flex-end;
   gap: 5px;
 }
-nav ul.menu {
-  background-color: rgba(0, 0, 0, 0.5);
-  list-style: none;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  height: 100vh;
-  left: 0;
-  transform-origin: top;
-  transform: scale(1, 0);
-  transition: 500ms ease 300ms;
-}
-#menu_toggle:checked ~ ul.menu {
-  transform: scale(1, 1);
-  transition: 500ms ease;
-}
-#menu_toggle:checked ~ ul.menu > li {
-  opacity: 1;
-  transition: 500ms ease 400ms;
-}
-nav ul.menu li a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav ul.menu > li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  opacity: 0;
-  min-height: 3rem;
-  transition: 500ms ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-nav ul.menu > li > a {
-  flex-grow: 1;
-  min-height: 3rem;
-}
-nav ul.menu li > ul {
-  list-style: none;
-  display: none;
-}
-nav ul.menu li:focus-within > ul,
-nav ul.menu li:hover > ul {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-nav ul.menu li ul li a {
-  min-height: 2rem;
-}
-
-
-
-nav ul.menu li:focus-within > a,
-nav ul.menu li:hover > a {
-  background-color: rgba(0, 0, 0, 1);
-}
-nav ul.menu li ul li a:focus-within,
-nav ul.menu li ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-
-
-nav ul.menu li a div.icon_wrapper svg {
-  width: 1rem;
-  height: 1rem;
-  transform-origin: 50% 50%;
-  transform: rotate(90deg);
-  transition: 500ms ease;
-}
-
-nav ul.menu li:focus-within a div.icon_wrapper svg,
-nav ul.menu li:hover a div.icon_wrapper svg {
-  transform: rotate(180deg);
-  transition: 500ms ease;
-}
-
-
-
-nav > label svg .line {
+nav label svg .line {
   transition: 400ms;
   transform-origin: center;
 }
@@ -147,6 +68,105 @@ nav > label svg .line {
 
 
 
+
+
+nav ul.menu {
+  background-color: rgba(0, 0, 0, 0.5);
+  list-style: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  transform-origin: top;
+  transform: scale(1, 0);
+  transition: 500ms ease 300ms;
+}
+#menu_toggle:checked ~ ul.menu {
+  transform: scale(1, 1);
+  transition: 500ms ease;
+}
+nav ul.menu > li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  min-height: 3rem;
+  transition: 500ms ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+#menu_toggle:checked ~ ul.menu > li {
+  opacity: 1;
+  transition: 500ms ease 400ms;
+}
+nav ul.menu li ul {
+  list-style: none;
+  display: none;
+}
+nav ul.menu li:focus-within ul,
+nav ul.menu li:hover ul {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
+nav ul.menu li a div.icon_wrapper svg {
+  width: 1rem;
+  height: 1rem;
+  transform-origin: 50% 50%;
+  transform: rotate(90deg);
+  transition: 500ms ease;
+}
+nav ul.menu li:focus-within a div.icon_wrapper svg,
+nav ul.menu li:hover a div.icon_wrapper svg {
+  transform: rotate(180deg);
+  transition: 500ms ease;
+}
+
+
+
+
+
+nav a, nav label {
+  color: var(--c-navs);
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 350ms ease;
+}
+nav a:hover, nav a:focus-within,
+nav label:hover {
+  opacity: 1;
+}
+nav ul.menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul.menu > li > a {
+  flex-grow: 1;
+  min-height: 3rem;
+}
+nav ul.menu li ul li a {
+  min-height: 2rem;
+}
+nav ul.menu li:focus-within > a,
+nav ul.menu li:hover > a {
+  background-color: rgba(0, 0, 0, 1);
+}
+nav ul.menu li ul li a:focus-within,
+nav ul.menu li ul li a:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+
 @media only screen and (min-width: 600px) {
 
   nav {
@@ -156,9 +176,14 @@ nav > label svg .line {
     padding: 0;
     gap: 0;
   }
-  nav > label {
+  nav label {
     display: none;
   }
+
+
+
+
+
   nav ul.menu {
     position: relative;
     display: flex;
@@ -176,9 +201,6 @@ nav > label svg .line {
     transition: 0;
     border: none;
   }
-
-  
-
   nav ul.menu li ul {
     position: absolute;
     display: flex;
@@ -197,8 +219,8 @@ nav > label svg .line {
     opacity: 0;
     transition: 500ms ease 250ms;
   }
-  nav ul.menu > li:focus-within > ul,
-  nav ul.menu > li:hover > ul {
+  nav ul.menu li:focus-within ul,
+  nav ul.menu li:hover ul {
     flex-direction: row;
     opacity: 1;
     transform: scale(1,1);
@@ -206,7 +228,6 @@ nav > label svg .line {
     border: none;
     background-color: transparent;
   }
-
   nav ul.menu li ul li {
     display: flex;
     align-items: center;
@@ -219,8 +240,14 @@ nav > label svg .line {
     transition: 500ms ease 300ms;
   }
 
+
+
   
+
   nav ul.menu > li > a {
+    min-height: 0;
+  }
+  nav ul.menu li ul li a {
     min-height: 0;
   }
   nav ul.menu li:focus-within > a,
@@ -231,7 +258,5 @@ nav > label svg .line {
   nav ul.menu li ul li a:hover {
     background-color: transparent;
   }
-  nav ul.menu li ul li a {
-    min-height: 0;
-  }
+  
 }
