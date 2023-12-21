@@ -1,7 +1,20 @@
 :root {
-  --c-header: rgba(0, 0, 0, 0.75);
   --h-header: 2rem;
-  --c-navs: rgb(255,255,255);
+  --h-subheader: 1.75rem;
+  --h-menu: 3rem;
+  --h-submenu: 2rem;
+
+  --c-darkest: rgba(0, 0, 0, 0.75);
+  --c-darker: rgba(0, 0, 0, 0.5);
+  --c-dark: rgba(0, 0, 0, 0.25);
+  --c-light: rgba(0, 0, 0, 0.1);
+  --c-link: rgb(255,255,255);
+
+  --o-link: 0.5;
+
+  --t-in: 500ms;
+  --t-out: 300ms;
+  --t-delay: 250ms;
 }
 
 
@@ -12,7 +25,7 @@ header {
   position: fixed;
   width: 100%;
   height: var(--h-header);
-  background-color: var(--c-header);
+  background-color: var(--c-darkest);
 }
 
 
@@ -28,7 +41,7 @@ nav div.icon_wrapper {
   padding: 3px;
 }
 nav div.icon_wrapper svg {
-  fill: var(--c-navs);
+  fill: var(--c-link);
 }
 
 
@@ -71,7 +84,7 @@ nav label svg .line {
 
 
 nav ul.menu {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: var(--c-darker);
   list-style: none;
   position: absolute;
   top: 100%;
@@ -80,7 +93,7 @@ nav ul.menu {
   left: 0;
   transform-origin: top;
   transform: scale(1, 0);
-  transition: 500ms ease 300ms;
+  transition: 300ms ease 300ms;
 }
 #menu_toggle:checked ~ ul.menu {
   transform: scale(1, 1);
@@ -91,7 +104,6 @@ nav ul.menu > li {
   flex-direction: column;
   justify-content: center;
   opacity: 0;
-  min-height: 3rem;
   transition: 500ms ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -107,8 +119,7 @@ nav ul.menu li:focus-within ul,
 nav ul.menu li:hover ul {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: var(--c-dark);
 }
 
 
@@ -133,9 +144,9 @@ nav ul.menu li:hover a div.icon_wrapper svg {
 
 
 nav a, nav label {
-  color: var(--c-navs);
+  color: var(--c-link);
   text-decoration: none;
-  opacity: 0.5;
+  opacity: var(--o-link);
   transition: opacity 350ms ease;
 }
 nav a:hover, nav a:focus-within,
@@ -149,18 +160,18 @@ nav ul.menu li a {
 }
 nav ul.menu > li > a {
   flex-grow: 1;
-  min-height: 3rem;
+  min-height: var(--h-menu);
 }
 nav ul.menu li ul li a {
-  min-height: 2rem;
+  min-height: var(--h-submenu);
 }
 nav ul.menu li:focus-within > a,
 nav ul.menu li:hover > a {
-  background-color: rgba(0, 0, 0, 1);
+  background-color: var(--c-darkest);
 }
 nav ul.menu li ul li a:focus-within,
 nav ul.menu li ul li a:hover {
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: var(--c-darker);
 }
 
 
@@ -173,7 +184,6 @@ nav ul.menu li ul li a:hover {
     max-width: 1000px;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 0;
     gap: 0;
   }
   nav label {
@@ -207,13 +217,13 @@ nav ul.menu li ul li a:hover {
     top: 100%;
     left: 0;
     width: 100%;
-    height: 1.5rem;
+    height: var(--h-subheader);
     justify-content: center;
     gap: 10%;
     background: linear-gradient(to right,
     rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5),
+    var(--c-darker),
+    var(--c-darker),
     rgba(0, 0, 0, 0));
     transform: scale(0,1);
     opacity: 0;
