@@ -25,9 +25,11 @@
 
 header {
   position: fixed;
+  top: 0;
   width: 100%;
   height: var(--h-header);
   background-color: var(--c-darkest);
+  z-index: 9999;
 }
 
 
@@ -40,7 +42,7 @@ header {
 nav div.icon_wrapper {
   display: inline-flex;
   height: 100%;
-  padding: 3px;
+  padding: 5px;
 }
 nav div.icon_wrapper svg {
   fill: var(--c-link);
@@ -53,7 +55,7 @@ nav div.icon_wrapper svg {
 nav {
   display: flex;
   height: 100%;
-  padding: 0 5px;
+  padding: 0 3px;
   gap: 5px;
 }
 nav > div {
@@ -87,7 +89,7 @@ nav label svg .line {
 
 
 nav ul.menu {
-  background-color: var(--c-darker);
+  background-color: var(--c-darkest);
   list-style: none;
   position: absolute;
   top: 100%;
@@ -204,6 +206,7 @@ nav ul.menu li ul li a:hover {
     justify-content: space-between;
     margin: 0 auto;
     gap: 0;
+    padding: 0;
   }
   nav label {
     display: none;
