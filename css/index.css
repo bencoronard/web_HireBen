@@ -1,43 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Hedvig+Letters+Sans&display=swap');
-
-:root {
-  --h-header: 2rem;
-  --h-subheader: 1.75rem;
-  --h-menu: 3rem;
-  --h-submenu: 2rem;
-  --w-content: 1000px;
-
-  --c-darkest: rgba(0, 0, 0, 0.75);
-  --c-darker: rgba(0, 0, 0, 0.5);
-  --c-dark: rgba(0, 0, 0, 0.25);
-  --c-light: rgba(0, 0, 0, 0.1);
-  --c-link: rgb(255,255,255);
-
-  --o-link: 0.5;
-
-  --t-longest: 500ms;
-  --t-longer: 400ms;
-  --t-long: 300ms;
-  --t-short: 200ms;
-}
-
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: 'Hedvig Letters Sans', sans-serif;
-  height: 200vh;
-  background-color: #fff;
-
-  background-image: url("/img/manhattan.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-main {
+/* main {
+  display: none;
   margin-top: var(--h-header);
 }
 
@@ -117,7 +79,7 @@ main section.hero div.content_box div.img_wrapper img {
     height: initial;
     text-align: center;
     padding-top: 3vh;
-    /* padding-left: 5vh; */
+    padding-left: 5vh;
     font-size: 30vh;
     line-height: 0.8;
     background-color: rgba(255, 228, 196, 0.553);
@@ -127,7 +89,7 @@ main section.hero div.content_box div.img_wrapper img {
     z-index: 0;
     text-align: center;
     padding-top: 1vh;
-    /* padding-left: 7vh; */
+    padding-left: 7vh;
     font-size: 5vh;
     bottom: 0;
     width: 100%;
@@ -135,7 +97,7 @@ main section.hero div.content_box div.img_wrapper img {
     color: rgba(0, 0, 0, 0.75);
     background-color: rgba(180, 250, 227, 0.541);
   }
-}
+} */
 
 
 
