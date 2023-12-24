@@ -1,0 +1,43 @@
+:root {
+  --h-header: 3rem;
+  --h-subheader: 2rem;
+  --f-header: 1.5rem;
+  --f-subheader: 1.25rem;
+
+  --h-menu: 3rem;
+  --h-submenu: 2rem;
+  --f-menu: 2rem;
+  --f-submenu: 1.5rem;
+
+   --h-footer: 100px;
+
+  --p-icons: 0.6rem;
+
+  --c-darkest: rgba(0, 0, 0, 0.8);
+  --c-darker: rgba(0, 0, 0, 0.5);
+  --c-dark: rgba(0, 0, 0, 0.25);
+  --c-light: rgba(0, 0, 0, 0.1);
+  --c-link: rgb(255,255,255);
+
+  --o-link: 0.5;
+
+  --t-longest: 500ms;
+  --t-longer: 400ms;
+  --t-long: 300ms;
+  --t-short: 200ms;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  background-color: #fff;
+  background-image: url("/img/manhattan.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

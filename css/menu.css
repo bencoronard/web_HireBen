@@ -1,72 +1,60 @@
-:root {
-  --h-header: 2rem;
-  --h-subheader: 1.75rem;
-  --h-menu: 3rem;
-  --h-submenu: 2rem;
-  --w-content: 1000px;
-
-  --c-darkest: rgba(0, 0, 0, 0.75);
-  --c-darker: rgba(0, 0, 0, 0.5);
-  --c-dark: rgba(0, 0, 0, 0.25);
-  --c-light: rgba(0, 0, 0, 0.1);
-  --c-link: rgb(255,255,255);
-
-  --o-link: 0.5;
-
-  --t-longest: 500ms;
-  --t-longer: 400ms;
-  --t-long: 300ms;
-  --t-short: 200ms;
-}
-
-
-
-
-
 header {
   position: fixed;
   width: 100%;
   height: var(--h-header);
+  font-weight: 400;
   background-color: var(--c-darkest);
 }
 
 
 
 
-
-#menu_toggle {
-  display: none;
-}
 nav div.icon_wrapper {
   display: inline-flex;
   height: 100%;
-  padding: 3px;
+  padding: var(--p-icons);
 }
 nav div.icon_wrapper svg {
   fill: var(--c-link);
 }
 
+nav a, nav label {
+  color: var(--c-link);
+  text-decoration: none;
+
+  opacity: var(--o-link);
+  transition: opacity
+    var(--t-longest)
+    ease;
+}
+nav a:hover, nav a:focus-within,
+nav label:hover {
+  opacity: 1;
+  transition: opacity
+    var(--t-long)
+    ease-in;
+}
 
 
 
 
 nav {
   display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
   height: 100%;
-  padding: 0 5px;
-  gap: 5px;
 }
+
 nav > div {
   display: flex;
   flex-wrap: nowrap;
   flex-grow: 1;
   justify-content: flex-end;
-  gap: 5px;
 }
+
 nav label svg .line {
   transform-origin: center;
-  transition-duration: var(--t-long);
-  transition-timing-function: ease;
+  transition: var(--t-long) ease;
 }
 #menu_toggle:checked ~ label svg .top,
 #menu_toggle:checked ~ label svg .bot {
@@ -85,113 +73,108 @@ nav label svg .line {
 
 
 
-
 nav ul.menu {
-  background-color: var(--c-darker);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: var(--c-darkest);
   list-style: none;
   position: absolute;
   top: 100%;
   width: 100%;
   height: 100vh;
   left: 0;
+  padding-bottom: 30vh;
 
   transform-origin: top;
   transform: scale(1, 0);
-  transition-duration: var(--t-long);
-  transition-timing-function: ease-out;
-  transition-delay: var(--t-short);
-  
+  transition: transform
+    var(--t-long)
+    ease-out
+    var(--t-short);
 }
 #menu_toggle:checked ~ ul.menu {
   transform: scale(1, 1);
-  transition-duration: var(--t-longest);
-  transition-timing-function: ease-out;
+  transition: transform
+    var(--t-longest)
+    ease-out;
 }
+
 nav ul.menu > li {
   display: flex;
+  font-size: clamp(1rem,10vw,var(--f-menu));
   flex-direction: column;
-  justify-content: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 20vw;
 
   opacity: 0;
-  transition-duration: var(--t-long);
-  transition-timing-function: ease-out;
+  transition: opacity
+    var(--t-long)
+    ease-out;
 }
 #menu_toggle:checked ~ ul.menu > li {
   opacity: 1;
-  transition-duration: var(--t-longest);
-  transition-timing-function: ease-in;
-  transition-delay: var(--t-longer);
+  transition: opacity
+    var(--t-longest)
+    ease-in
+    var(--t-longer);
 }
-nav ul.menu li ul {
-  list-style: none;
-  display: none;
-}
-nav ul.menu li:focus-within ul,
-nav ul.menu li:hover ul {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--c-dark);
+nav ul.menu > li:focus-within,
+nav ul.menu > li:hover {
+  border: 1px solid rgba(255,255,255,0.5);
+  background-color: var(--c-darkest);
 }
 
+nav ul.menu > li > a {
+  width: fit-content;
+}
+nav ul.menu > li:focus-within > a,
+nav ul.menu > li:hover > a {
+  opacity: 1;
+}
 
-
-
+nav ul.menu > li > a > * {
+  padding: 0;
+}
 
 nav ul.menu li a div.icon_wrapper svg {
-  width: 1rem;
-  height: 1rem;
+  width: clamp(1rem,10vw,var(--f-submenu));
+  height: clamp(1rem,10vw,var(--f-submenu));
 
   transform-origin: 50% 50%;
   transform: rotate(90deg);
-  transition-duration: var(--t-long);
-  transition-timing-function: ease;
+  transition: transform
+    var(--t-long)
+    ease;
 }
 nav ul.menu li:focus-within a div.icon_wrapper svg,
 nav ul.menu li:hover a div.icon_wrapper svg {
   transform: rotate(180deg);
-  transition-duration: var(--t-long);
-  transition-timing-function: ease;
+  transition: transform
+    var(--t-long)
+    ease;
 }
 
 
 
 
-
-nav a, nav label {
-  color: var(--c-link);
-  text-decoration: none;
-
-  opacity: var(--o-link);
-  transition-duration: var(--t-longest);
-  transition-timing-function: ease;
+nav ul.menu li ul {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
-nav a:hover, nav a:focus-within,
-nav label:hover {
-  opacity: 1;
-  transition-duration: var(--t-long);
-  transition-timing-function: ease-in;
-}
-nav ul.menu li a {
+nav ul.menu li:focus-within ul,
+nav ul.menu li:hover ul {
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
-nav ul.menu > li > a {
-  flex-grow: 1;
-  min-height: var(--h-menu);
+
+nav ul.menu li ul li {
+  padding-left: clamp(1rem,5vw,2rem);
+  font-size: clamp(1rem,10vw,var(--f-submenu));
 }
-nav ul.menu li ul li a {
-  min-height: var(--h-submenu);
-}
-nav ul.menu li:focus-within > a,
-nav ul.menu li:hover > a {
-  background-color: var(--c-darkest);
-}
-nav ul.menu li ul li a:focus-within,
-nav ul.menu li ul li a:hover {
-  background-color: var(--c-darker);
-}
+
 
 
 
@@ -199,102 +182,95 @@ nav ul.menu li ul li a:hover {
 
 @media only screen and (min-width: 600px) {
 
-  nav {
-    max-width: var(--w-content);
-    justify-content: space-between;
-    margin: 0 auto;
-    gap: 0;
-  }
   nav label {
     display: none;
   }
 
-
-
-
-
   nav ul.menu {
     position: relative;
-    display: flex;
-    transform: scale(1, 1);
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: transparent;
     top: 0;
     height: 100%;
-    justify-content: space-evenly;
+    left: 0;
+    padding: 0;
+    transform: none;
+  }
+
+  nav ul.menu > li {
+    justify-content: center;
+    font-size: var(--f-header);
+    padding: 0;
+    opacity: 1;
+  }
+  nav ul.menu > li:focus-within,
+  nav ul.menu > li:hover {
+    border: 0;
     background-color: transparent;
   }
-  nav ul.menu > li {
-    flex-direction: row;
-    opacity: 1;
-    align-items: center;
-    min-height: 0;
-    transition: 0;
-    border: none;
-  }
+
+
+
   nav ul.menu li ul {
     position: absolute;
     display: flex;
+    flex-direction: row;
     top: 100%;
     left: 0;
     width: 100%;
     height: var(--h-subheader);
     justify-content: center;
     gap: 10%;
+    padding: 0;
     background: linear-gradient(to right,
-    rgba(0, 0, 0, 0),
-    var(--c-darker),
-    var(--c-darker),
-    rgba(0, 0, 0, 0));
+    rgba(0, 0, 0, 0) 0%,
+    var(--c-darker) 20%,
+    var(--c-darker) 80%,
+    rgba(0, 0, 0, 0)) 100%;
 
     transform: scale(0,1);
     opacity: 0;
-    transition-duration: var(--t-long);
-    transition-timing-function: ease;
-    transition-delay: var(--t-short);
+    transition: transform
+      var(--t-long)
+      ease
+      var(--t-short),
+      opacity
+      var(--t-long)
+      ease
+      var(--t-short);
   }
   nav ul.menu li:focus-within ul,
   nav ul.menu li:hover ul {
-    flex-direction: row;
-    border: none;
-    background-color: transparent;
-
     opacity: 1;
     transform: scale(1,1);
-    transition-duration: var(--t-long);
-    transition-timing-function: ease;
+    transition: transform
+      var(--t-long) ease,
+      opacity
+      var(--t-long) ease;
   }
+
+  nav ul.menu li a div.icon_wrapper svg {
+    width: var(--f-subheader);
+    height: var(--f-subheader);
+  }
+
   nav ul.menu li ul li {
     display: flex;
     align-items: center;
-
+    padding: 0;
+    font-size: var(--f-subheader);
     opacity: 0;
-    transition-duration: var(--t-long);
-    transition-timing-function: ease;
+    transition: opacity
+      var(--t-long) ease;
   }
   nav ul.menu li:focus-within ul li,
   nav ul.menu li:hover ul li {
     opacity: 1;
-    transition-duration: var(--t-long);
-    transition-timing-function: ease;
-    transition-delay: var(--t-longer);
-  }
-
-
-
-  
-
-  nav ul.menu > li > a {
-    min-height: 0;
-  }
-  nav ul.menu li ul li a {
-    min-height: 0;
-  }
-  nav ul.menu li:focus-within > a,
-  nav ul.menu li:hover > a {
-    background-color: transparent;
-  }
-  nav ul.menu li ul li a:focus-within,
-  nav ul.menu li ul li a:hover {
-    background-color: transparent;
+    transition: opacity
+      var(--t-long)
+      ease
+      var(--t-longer);
   }
   
 }
