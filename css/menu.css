@@ -2,7 +2,6 @@ header {
   position: fixed;
   width: 100%;
   height: var(--h-header);
-  font-weight: 400;
   background-color: var(--c-darkest);
 }
 
@@ -101,6 +100,7 @@ nav ul.menu {
 }
 
 nav ul.menu > li {
+  font-weight: 400;
   display: flex;
   font-size: clamp(1rem,10vw,var(--f-menu));
   flex-direction: column;
@@ -171,6 +171,7 @@ nav ul.menu li:hover ul {
 }
 
 nav ul.menu li ul li {
+  font-weight: 300;
   padding-left: clamp(1rem,5vw,2rem);
   font-size: clamp(1rem,10vw,var(--f-submenu));
 }
@@ -203,6 +204,7 @@ nav ul.menu li ul li {
     font-size: var(--f-header);
     padding: 0;
     opacity: 1;
+    font-weight: 300;
   }
   nav ul.menu > li:focus-within,
   nav ul.menu > li:hover {
