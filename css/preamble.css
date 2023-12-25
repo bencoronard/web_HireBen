@@ -37,7 +37,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   background-color: #fff;
-  background-image: url("/img/manhattan.jpg");
+  /* background-image: url("/img/manhattan.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
