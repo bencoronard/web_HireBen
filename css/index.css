@@ -63,12 +63,21 @@ main section.hero h3 {
 
 
 section.highlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   color: white;
-  /* padding-top: min(2%,4vh); */
   background-color: var(--c-darkest);
   opacity: 0.95;
 }
+
+section.highlight > h2 {
+  text-align: center;
+  font-size: clamp(0.75rem,10vw,7vh);
+  padding-top: min(4vw,1rem);
+}
+
 section.highlight input {
   display: none;
 }
@@ -79,7 +88,6 @@ section.highlight div.cards {
   height: 90%;
   perspective: 100vw;
   transform-style: preserve-3d;
-  /* border: 1px dashed red; */
   overflow: hidden;
 }
 section.highlight div.cards label {
@@ -89,7 +97,7 @@ section.highlight div.cards label {
   max-height: 80%;
   border-radius: 5px;
   background-color: rgba(137, 43, 226, 1);
-  border: 1px solid white;
+  /* border: 1px solid white; */
   cursor: pointer;
   transition: 1000ms;
 
@@ -102,7 +110,6 @@ section.highlight div.dots {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px dashed greenyellow; */
 }
 section.highlight div.dots label {
   width: clamp(0.3rem,10%,0.5rem);
