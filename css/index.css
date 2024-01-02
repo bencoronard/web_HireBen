@@ -189,17 +189,42 @@ section.highlight div.dots label {
 
 
 
-
-
-
-
-
-
-
-
 main section.content1 {
-  background-color: #ce92ffaf;
+  background-color: rgba(255,255,255,1);
 }
+
+main section.content1 div.content_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+main section.content1 div.entry {
+  display: flex;
+  border: 1px solid greenyellow;
+  flex-wrap: wrap;
+}
+main section.content1 div.entry > * {
+  border: 1px dashed red;
+}
+main section.content1 div.img_wrapper {
+  height: 20vw;
+  flex-basis: 40%;
+  overflow: hidden;
+  background-image: url('/img/manhattan.jpg');
+  background-size: cover;
+  background-position: center;
+}
+main section.content1 p {
+  font-size: clamp(0.5rem,5vw,1rem);
+}
+
+
+
+
+
 main section.content2 {
   background-color: #ff84e2af;
 }
@@ -264,8 +289,9 @@ footer section.media_links p {
   width: 100%;
 }
 
-
-
+footer section.nav > span {
+  font-weight: 700;
+}
 footer section.nav ul {
   list-style: none;
   font-size: clamp(0.5rem,10vw,1rem);
@@ -326,37 +352,3 @@ footer p.copyright {
   }
   
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* main section.highlight {
-  background-color: rgba(191, 131, 255, 0.75);
-}
-main section.skills {
-  background-color: rgba(109, 231, 255, 0.75);
-}
-main section.background {
-  background-color: rgba(255, 233, 106, 0.75);
-} */
