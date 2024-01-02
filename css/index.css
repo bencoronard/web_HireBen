@@ -258,7 +258,7 @@ footer div.footer_items {
   /* justify-content: space-between; */
 }
 footer div.footer_items > * { 
-  /* border: 1px dashed blueviolet; */
+  border: 1px dashed blueviolet;
   flex-basis: 33%;
   flex-grow: 1;
 }
@@ -271,7 +271,7 @@ footer div.logo {
   display: flex;
 }
 footer div.logo > * {
-  /* border: 1px solid red; */
+  border: 1px solid red;
 }
 footer div.icon_wrapper {
   width: clamp(1rem,10vw,3rem);
