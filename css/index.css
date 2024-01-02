@@ -97,7 +97,6 @@ section.highlight div.cards label {
   max-height: 80%;
   border-radius: 5px;
   background-color: rgba(137, 43, 226, 1);
-  /* border: 1px solid white; */
   cursor: pointer;
   transition: 1000ms;
 
@@ -190,36 +189,42 @@ section.highlight div.dots label {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 main section.content1 {
-  background-color: #ce92ffaf;
+  background-color: rgba(255,255,255,1);
 }
+
+main section.content1 div.content_box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+main section.content1 div.entry {
+  display: flex;
+  border: 1px solid greenyellow;
+  flex-wrap: wrap;
+}
+main section.content1 div.entry > * {
+  border: 1px dashed red;
+}
+main section.content1 div.img_wrapper {
+  height: 20vw;
+  flex-basis: 40%;
+  overflow: hidden;
+  background-image: url('/img/manhattan.jpg');
+  background-size: cover;
+  background-position: center;
+}
+main section.content1 p {
+  font-size: clamp(0.5rem,5vw,1rem);
+}
+
+
+
+
+
 main section.content2 {
   background-color: #ff84e2af;
 }
@@ -229,6 +234,96 @@ main section.content3 {
 
 
 
+
+
+
+
+
+
+
+footer {
+  background-color: var(--c-darkest);
+}
+footer div.content_box {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+
+footer div.footer_items {
+  display: flex;
+  /* border: 1px dashed white; */
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+}
+footer div.footer_items > * { 
+  /* border: 1px dashed blueviolet; */
+  flex-basis: 33%;
+  flex-grow: 1;
+}
+
+footer div.footer_items p {
+  font-size: clamp(0.5rem,5vw,1rem);
+}
+
+footer div.logo {
+  display: flex;
+}
+footer div.logo > * {
+  /* border: 1px solid red; */
+}
+footer div.icon_wrapper {
+  width: clamp(1rem,10vw,3rem);
+}
+footer div.icon_wrapper svg {
+  fill: var(--c-link);
+}
+
+footer section.media_links span {
+  font-weight: 700;
+  font-size:clamp(0.5rem,5vw,2.5rem);
+}
+footer section.media_links p {
+  /* border: 1px solid greenyellow; */
+  width: 100%;
+}
+
+footer section.nav > span {
+  font-weight: 700;
+}
+footer section.nav ul {
+  list-style: none;
+  font-size: clamp(0.5rem,10vw,1rem);
+}
+footer section.nav > ul > li > a {
+  font-weight: 700;
+}
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer hr {
+  opacity: 0.6;
+}
+footer p.copyright {
+  text-align: center;
+  font-size: clamp(0.5rem,10vw,1rem);
+}
+
+/* footer .media_links {
+  display: none;
+} */
+/* footer .about {
+  display: none;
+} */
+/* footer .nav {
+  display: none;
+} */
+/* footer .copyright {
+  display: none;
+} */
 
 
 @media only screen and (min-width: 600px) {
@@ -255,40 +350,5 @@ main section.content3 {
     z-index: 1;
     opacity: 0.4;
   }
-
-
+  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* main section.highlight {
-  background-color: rgba(191, 131, 255, 0.75);
-}
-main section.skills {
-  background-color: rgba(109, 231, 255, 0.75);
-}
-main section.background {
-  background-color: rgba(255, 233, 106, 0.75);
-} */
