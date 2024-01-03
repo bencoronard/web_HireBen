@@ -3,6 +3,7 @@ main {
 }
 main section {
   height: min(100vh,200vw);
+  /* min-height: 100vh; */
 }
 
 
@@ -109,6 +110,7 @@ section.highlight div.dots {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 1.5%;
 }
 section.highlight div.dots label {
   width: clamp(0.3rem,10%,0.5rem);
@@ -186,41 +188,75 @@ section.highlight div.dots label {
   opacity: 0.4;
 }
 
+@media only screen and (min-width: 600px) {
+
+  #t-3:checked ~ div.cards label[for="t-1"],
+  #t-4:checked ~ div.cards label[for="t-2"],
+  #t-5:checked ~ div.cards label[for="t-3"],
+  #t-1:checked ~ div.cards label[for="t-4"],
+  #t-2:checked ~ div.cards label[for="t-5"]
+  {
+    transform: translate3D(-130%,0,-14rem)
+      rotateY(50deg);
+    z-index: 1;
+    opacity: 0.4;
+  }
+  #t-3:checked ~ div.cards label[for="t-5"],
+  #t-4:checked ~ div.cards label[for="t-1"],
+  #t-5:checked ~ div.cards label[for="t-2"],
+  #t-1:checked ~ div.cards label[for="t-3"],
+  #t-2:checked ~ div.cards label[for="t-4"]
+  {
+    transform: translate3D(130%,0,-14rem)
+      rotateY(-50deg);
+    z-index: 1;
+    opacity: 0.4;
+  }
+  
+}
+
 
 
 
 main section.content1 {
-  background-color: rgba(255,255,255,1);
+  background-color: rgb(255, 221, 143);
+  height: auto;
 }
 
 main section.content1 div.content_box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
   max-width: 1000px;
   margin: 0 auto;
-}
-main section.content1 div.entry {
+  padding: 2.5%;
   display: flex;
-  border: 1px solid greenyellow;
-  flex-wrap: wrap;
-}
-main section.content1 div.entry > * {
-  border: 1px dashed red;
-}
-main section.content1 div.img_wrapper {
-  height: 20vw;
-  flex-basis: 40%;
-  overflow: hidden;
-  background-image: url('/img/manhattan.jpg');
-  background-size: cover;
-  background-position: center;
-}
-main section.content1 p {
-  font-size: clamp(0.5rem,5vw,1rem);
+  flex-direction: column;
+  gap: clamp(0.5rem,5vw,2rem);
 }
 
+main section.content1 div.card {
+  background-color: #fff;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.4);
+}
+main section.content1 div.card_image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+main section.content1 div.card_content {
+  padding: 1rem;
+}
+
+
+@media only screen and (min-width: 600px) {
+  main section.content1 div.card {
+    display: flex;
+  }
+  main section.content1 div.card_image {
+    flex: 1;
+  }
+  main section.content1 div.card_content {
+    flex: 1.25;
+  }
+}
 
 
 
@@ -253,8 +289,9 @@ footer div.content_box {
 
 footer div.footer_items {
   display: flex;
+  flex-direction: column;
   /* border: 1px dashed white; */
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   /* justify-content: space-between; */
 }
 footer div.footer_items > * { 
@@ -312,43 +349,8 @@ footer p.copyright {
   font-size: clamp(0.5rem,10vw,1rem);
 }
 
-/* footer .media_links {
-  display: none;
-} */
-/* footer .about {
-  display: none;
-} */
-/* footer .nav {
-  display: none;
-} */
-/* footer .copyright {
-  display: none;
-} */
-
-
 @media only screen and (min-width: 600px) {
-
-  #t-3:checked ~ div.cards label[for="t-1"],
-  #t-4:checked ~ div.cards label[for="t-2"],
-  #t-5:checked ~ div.cards label[for="t-3"],
-  #t-1:checked ~ div.cards label[for="t-4"],
-  #t-2:checked ~ div.cards label[for="t-5"]
-  {
-    transform: translate3D(-130%,0,-14rem)
-      rotateY(50deg);
-    z-index: 1;
-    opacity: 0.4;
+  footer div.footer_items {
+    flex-direction: row;
   }
-  #t-3:checked ~ div.cards label[for="t-5"],
-  #t-4:checked ~ div.cards label[for="t-1"],
-  #t-5:checked ~ div.cards label[for="t-2"],
-  #t-1:checked ~ div.cards label[for="t-3"],
-  #t-2:checked ~ div.cards label[for="t-4"]
-  {
-    transform: translate3D(130%,0,-14rem)
-      rotateY(-50deg);
-    z-index: 1;
-    opacity: 0.4;
-  }
-  
 }
