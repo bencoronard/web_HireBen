@@ -68,7 +68,6 @@ section.highlight {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  color: white;
   background-color: var(--c-darkest);
   opacity: 0.95;
 }
@@ -77,6 +76,7 @@ section.highlight > h2 {
   text-align: center;
   font-size: clamp(0.75rem,10vw,7vh);
   padding-top: min(4vw,1rem);
+  color: white;
 }
 
 section.highlight input {
@@ -97,7 +97,7 @@ section.highlight div.cards label {
   aspect-ratio: 0.7;
   max-height: 80%;
   border-radius: 5px;
-  background-color: rgba(137, 43, 226, 1);
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 1000ms;
 
@@ -219,7 +219,7 @@ section.highlight div.dots label {
 
 
 main section.content1 {
-  background-color: rgb(255, 221, 143);
+  background-color: rgb(255, 219, 161);
   height: auto;
 }
 
@@ -243,6 +243,7 @@ main section.content1 div.card_image img {
 }
 main section.content1 div.card_content {
   padding: 1rem;
+  font-size: clamp(0.5rem,5vw,1rem);
 }
 
 
@@ -262,10 +263,75 @@ main section.content1 div.card_content {
 
 
 main section.content2 {
-  background-color: #ff84e2af;
+  background-color: rgba(255,255,255,1);
+  height: auto;
 }
+
+main section.content2 div.content_box {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5%;
+  display: flex;
+  gap: clamp(0.5rem,5vw,1rem);
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-padding: 2.5%;
+}
+main section.content2 div.card {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.4);
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+}
+main section.content2 div.card_img {
+  width: 100%;
+  height: 60%;
+}
+main section.content2 div.card_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+main section.content2 div.card_content {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: clamp(0.5rem,5vw,1rem);
+}
+
+@media only screen and (min-width: 600px) {
+  main section.content2 div.card {
+    flex-basis: 40%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 main section.content3 {
-  background-color: #ff5252af;
+  background-color: rgb(240, 240, 240);
 }
 
 
