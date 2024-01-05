@@ -4,6 +4,7 @@ header {
   height: clamp(1.5rem,20vw,var(--h-header));
   background-color: var(--c-darkest);
   z-index: 999;
+  backdrop-filter: blur(10px);
 }
 
 
