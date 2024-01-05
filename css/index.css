@@ -324,6 +324,56 @@ main section.content3 div.content_box {
   gap: 0.5rem;
   font-size: clamp(0.5rem,5vw,1rem);
 }
+
+
+main section.content3 div.title {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10%;
+}
+main section.content3 div.title > * {
+  border: 1px dashed plum;
+}
+main section.content3 div.title h3 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+main section.content3 div.title h2 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+  font-size: 11.5rem;
+  z-index: 1;
+  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+
+  background: url("/img/splash11.jpg");
+  background-clip: text;
+  color: transparent;
+  animation: splash 30s infinite linear;
+}
+@keyframes splash {
+  0% {
+    background-position: 50% 0%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+
+
+main section.content3 div.content_box > * {
+  border: 1px dashed cyan;
+}
 main section.content3 div.tabs input {
   display: none;
 }
@@ -336,6 +386,7 @@ main section.content3 div.tabs label {
  background-color: #ffffffb0;
  font-weight: 400;
  border-right: 0.5px solid rgba(0,0,0,0.1);
+ cursor: pointer;
 }
 main section.content3 div.tabs label:last-of-type {
   border: none;
@@ -346,12 +397,7 @@ main section.content3 div.tabs div.tab {
  display: none;
  padding: 4%;
  width: 100%;
-
- /* border: 1px dashed green; */
 }
-/* main section.content3 div.tabs div.tab > * {
- border: 1px dashed goldenrod;
-} */
 main section.content3 div.tabs input:checked + label + div.tab {
   display: initial;
   box-shadow: 0 0 4px 1px rgba(0,0,0,0.4);
@@ -393,7 +439,7 @@ main section.content3 div.img_wrapper img {
     flex: 1;
   }
   main section.content3 div.tabs {
-    flex: 2;
+    flex: 1.5;
   }
 }
 
