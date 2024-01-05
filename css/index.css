@@ -311,27 +311,90 @@ main section.content2 div.card_content {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 main section.content3 {
   background-color: rgb(240, 240, 240);
+  height: auto;
+}
+main section.content3 div.content_box {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: clamp(0.5rem,5vw,1rem);
+}
+main section.content3 div.tabs input {
+  display: none;
+}
+main section.content3 div.tabs {
+  display: flex;
+  flex-wrap: wrap;
+}
+main section.content3 div.tabs label {
+ padding: 10px;
+ background-color: #ffffffb0;
+ font-weight: 400;
+ border-right: 0.5px solid rgba(0,0,0,0.1);
+}
+main section.content3 div.tabs label:last-of-type {
+  border: none;
+}
+main section.content3 div.tabs div.tab {
+ background-color: #fff;
+ order: 1;
+ display: none;
+ padding: 4%;
+ width: 100%;
+
+ /* border: 1px dashed green; */
+}
+/* main section.content3 div.tabs div.tab > * {
+ border: 1px dashed goldenrod;
+} */
+main section.content3 div.tabs input:checked + label + div.tab {
+  display: initial;
+  box-shadow: 0 0 4px 1px rgba(0,0,0,0.4);
+}
+main section.content3 div.tabs input:checked + label {
+  background-color: #fff;
+  color: #000;
+  z-index: 1;
+  box-shadow:
+    0 5px 0 0 #fff,
+    0 0px 4px 1px rgba(0,0,0,0.4);
+}
+main section.content3 div.img_wrapper {
+  width: min(200px,60%);
+  margin: 10% auto 0;
+  position: relative;
+}
+main section.content3 div.img_wrapper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to top,
+  rgb(255, 255, 255, 1) 0%,
+  rgb(255, 255, 255, 1) 5%,
+  rgba(255,255,255, 0) 60%);
+}
+main section.content3 div.img_wrapper img {
+  width: 100%;
+  object-fit: cover;
+}
+@media only screen and (min-width: 600px) {
+  main section.content3 div.content_box {
+    flex-direction: row;
+  }
+  main section.content3 div.title {
+    flex: 1;
+  }
+  main section.content3 div.tabs {
+    flex: 2;
+  }
 }
 
 
@@ -361,7 +424,7 @@ footer div.footer_items {
   /* justify-content: space-between; */
 }
 footer div.footer_items > * { 
-  border: 1px dashed blueviolet;
+  /* border: 1px dashed blueviolet; */
   flex-basis: 33%;
   flex-grow: 1;
 }
@@ -374,7 +437,7 @@ footer div.logo {
   display: flex;
 }
 footer div.logo > * {
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 footer div.icon_wrapper {
   width: clamp(1rem,10vw,3rem);
@@ -387,13 +450,13 @@ footer section.media_links span {
   font-weight: 700;
   font-size:clamp(0.5rem,5vw,2.5rem);
 }
-footer section.media_links p {
-  /* border: 1px solid greenyellow; */
-  width: 100%;
-}
+/* footer section.media_links p {
+  border: 1px solid greenyellow;
+} */
 
 footer section.nav > span {
   font-weight: 700;
+  font-size: clamp(0.5rem,10vw,1rem);
 }
 footer section.nav ul {
   list-style: none;
