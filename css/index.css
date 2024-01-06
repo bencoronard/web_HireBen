@@ -104,12 +104,12 @@ section.highlight div.cards label {
   justify-content: center;
   text-align: center;
 }
-section.highlight div.cards label:nth-of-type(1) {
+section.highlight div.cards label:nth-of-type(2) {
   background-image: url("/img/hongkong.jpg");
   background-size: cover;
   background-position: 100% 100%;
 }
-section.highlight div.cards label:nth-of-type(2) {
+section.highlight div.cards label:nth-of-type(1) {
   background-image: url("/img/bangkok.jpg");
   background-size: cover;
   background-position: 100% 40%;
@@ -168,7 +168,7 @@ section.highlight div.dots label {
 #t-5:checked ~ div.cards label[for="t-5"]
 {
   z-index: 3;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.75);
 }
 #t-3:checked ~ div.cards label[for="t-2"],
 #t-4:checked ~ div.cards label[for="t-3"],
@@ -286,6 +286,9 @@ main section.content1 div.card_content {
 @media only screen and (min-width: 600px) {
   main section.content1 div.card {
     display: flex;
+  }
+  main section.content1 div.card:nth-of-type(2) {
+    flex-direction: row-reverse;
   }
   main section.content1 div.card_image {
     flex: 1;
@@ -522,9 +525,9 @@ footer div.footer_items p {
 footer div.logo {
   display: flex;
 }
-footer div.logo > * {
-  /* border: 1px solid red; */
-}
+/* footer div.logo > * {
+  border: 1px solid red;
+} */
 footer div.icon_wrapper {
   width: clamp(1rem,10vw,3rem);
 }
