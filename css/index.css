@@ -3,7 +3,6 @@ main {
 }
 main section {
   height: min(100vh,200vw);
-  /* min-height: 100vh; */
 }
 
 
@@ -219,14 +218,21 @@ main section.content1 {
   background-color: rgb(255, 219, 161);
   height: auto;
 }
-
-main section.content1 div.content_box {
+section.content1 div.content_box > h2 {
+  font-size: clamp(0.5rem,10vw,7vh);
+  color: #000;
+  padding: min(1em,1rem) 0 0 2.5%;
+}
+section.content1 div.content_box {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2.5%;
+}
+
+main section.content1 div.content_box div.cards {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.5rem,5vw,2rem);
+  gap: clamp(0.5rem,5vw,1.5rem);
+  padding: 2.5%;
 }
 
 main section.content1 div.card {
@@ -263,23 +269,31 @@ main section.content2 {
   background-color: rgba(255,255,255,1);
   height: auto;
 }
-
 main section.content2 div.content_box {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 2.5%;
+}
+section.content2 div.content_box > h2 {
+  font-size: clamp(0.5rem,10vw,7vh);
+  color: #000;
+  padding-left: 2.5%;
+  margin-top: min(1em,1rem);
+}
+main section.content2 div.cards {
   display: flex;
   gap: clamp(0.5rem,5vw,1rem);
-  scroll-snap-type: x mandatory;
   overflow-x: scroll;
   overflow-y: hidden;
+  scroll-snap-type: x mandatory;
   scroll-padding: 2.5%;
+  padding: 2.5% 2.5% max(5%,1rem) 2.5%;
 }
 main section.content2 div.card {
   background-color: rgb(255, 255, 255);
   box-shadow: 0 0 5px 2px rgba(0,0,0,0.4);
   flex: 0 0 80%;
   scroll-snap-align: start;
+  /* height: 100%; */
 }
 main section.content2 div.card_img {
   width: 100%;
@@ -311,11 +325,11 @@ main section.content2 div.card_content {
 main section.content3 {
   background-color: rgb(240, 240, 240);
   height: auto;
-  border: 1px solid rgba(0, 0, 0, 0);
+  padding: clamp(1em,2%,1rem) 0;
 }
 main section.content3 div.content_box {
   max-width: 1000px;
-  margin: 10% auto;
+  margin: 0 auto;
   padding: 2.5%;
   background-color: #fff;
   box-shadow: 0 0 5px 2px rgba(0,0,0,0.4);
@@ -327,9 +341,6 @@ main section.content3 div.title {
   margin: 0 auto;
   margin-top: 7.5%;
 }
-/* main section.content3 div.title > * {
-  border: 1px dashed aqua;
-} */
 main section.content3 div.title h3 {
   width: fit-content;
   padding-left: clamp(0.2rem,2vw,1rem);
