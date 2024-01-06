@@ -62,23 +62,19 @@ main section.hero h3 {
 
 
 
-
 section.highlight {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
   background-color: var(--c-darkest);
-  opacity: 0.95;
 }
-
 section.highlight > h2 {
   text-align: center;
-  font-size: clamp(0.75rem,10vw,7vh);
-  padding-top: min(4vw,1rem);
+  font-size: clamp(0.5rem,10vw,7vh);
+  padding-top: min(10vw,2rem);
   color: white;
 }
-
 section.highlight input {
   display: none;
 }
@@ -86,16 +82,16 @@ section.highlight div.cards {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 90%;
+  flex-grow: 1;
   perspective: 100vw;
   transform-style: preserve-3d;
   overflow: hidden;
 }
 section.highlight div.cards label {
   position: absolute;
-  width: min(60%,50vh);
+  height: 80%;
+  max-width: 75%;
   aspect-ratio: 0.7;
-  max-height: 80%;
   border-radius: 5px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
@@ -212,8 +208,9 @@ section.highlight div.dots label {
     z-index: 1;
     opacity: 0.4;
   }
-  
 }
+
+
 
 
 
