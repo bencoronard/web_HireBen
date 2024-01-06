@@ -80,6 +80,7 @@ section.highlight input {
 
 
 
+
 section.highlight div.cards {
   display: flex;
   align-items: center;
@@ -102,7 +103,15 @@ section.highlight div.cards label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+section.highlight div.cards label > h2 {
   text-align: center;
+  text-transform: uppercase;
+  font-size: clamp(0.5rem,10vw,2.5rem);
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  /* border: 1px dashed red; */
 }
 section.highlight div.cards label:nth-of-type(2) {
   background-image: url("/img/hongkong.jpg");
@@ -424,7 +433,7 @@ main section.content3 div.tabs {
 }
 main section.content3 div.tabs label {
   cursor: pointer;
-  padding: 10px;
+  padding: min(3vw,0.5em);
   font-weight: 400;
   border-top: 2px solid rgba(0, 0, 0, 0.2);
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
