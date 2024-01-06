@@ -314,15 +314,60 @@ main section.content2 div.card_content {
 main section.content3 {
   background-color: rgb(240, 240, 240);
   height: auto;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 main section.content3 div.content_box {
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 10% auto;
   padding: 2.5%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  font-size: clamp(0.5rem,5vw,1rem);
+  background-color: #fff;
+  box-shadow: 0 0 5px 2px rgba(0,0,0,0.4);
+}
+
+
+main section.content3 div.title {
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 7.5%;
+}
+/* main section.content3 div.title > * {
+  border: 1px dashed aqua;
+} */
+main section.content3 div.title h3 {
+  width: fit-content;
+  padding-left: clamp(0.2rem,2vw,1rem);
+  font-weight: 700;
+  font-size: 3rem;
+  font-size: clamp(1rem,20vw,10vh);
+}
+main section.content3 div.title h2 {
+  width: fit-content;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: clamp(1rem,45vw,30vh);
+  line-height: 1em;
+
+  background: url("/img/splash.jpg");
+  background-clip: text;
+  color: transparent;
+  animation: splash 30s infinite linear;
+}
+@keyframes splash {
+  0% {
+    background-position: 50% 0%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  75% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
 }
 main section.content3 div.tabs input {
   display: none;
@@ -330,39 +375,42 @@ main section.content3 div.tabs input {
 main section.content3 div.tabs {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  font-size: clamp(0.5rem,5vw,1rem);
 }
 main section.content3 div.tabs label {
- padding: 10px;
- background-color: #ffffffb0;
- font-weight: 400;
- border-right: 0.5px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  padding: 10px;
+  font-weight: 400;
+  border-top: 2px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  border-right: 0.5px solid rgba(0,0,0,0.2);
+  background-color: rgba(0,0,0,0.1);
+}
+main section.content3 div.tabs label:first-of-type {
+  padding-left: 1em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
 }
 main section.content3 div.tabs label:last-of-type {
-  border: none;
+  padding-right: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
 }
 main section.content3 div.tabs div.tab {
- background-color: #fff;
- order: 1;
- display: none;
- padding: 4%;
- width: 100%;
-
- /* border: 1px dashed green; */
+  order: 1;
+  display: none;
+  padding: 4%;
+  width: 100%;
 }
-/* main section.content3 div.tabs div.tab > * {
- border: 1px dashed goldenrod;
-} */
 main section.content3 div.tabs input:checked + label + div.tab {
   display: initial;
-  box-shadow: 0 0 4px 1px rgba(0,0,0,0.4);
 }
 main section.content3 div.tabs input:checked + label {
-  background-color: #fff;
+  background-color: rgb(255,255,255);
   color: #000;
-  z-index: 1;
-  box-shadow:
-    0 5px 0 0 #fff,
-    0 0px 4px 1px rgba(0,0,0,0.4);
 }
 main section.content3 div.img_wrapper {
   width: min(200px,60%);
@@ -387,13 +435,10 @@ main section.content3 div.img_wrapper img {
 }
 @media only screen and (min-width: 600px) {
   main section.content3 div.content_box {
-    flex-direction: row;
+    margin: 2.5% auto;
   }
   main section.content3 div.title {
-    flex: 1;
-  }
-  main section.content3 div.tabs {
-    flex: 2;
+    margin-top: 0;
   }
 }
 
