@@ -77,6 +77,9 @@ section.highlight > h2 {
 section.highlight input {
   display: none;
 }
+
+
+
 section.highlight div.cards {
   display: flex;
   align-items: center;
@@ -101,6 +104,36 @@ section.highlight div.cards label {
   justify-content: center;
   text-align: center;
 }
+section.highlight div.cards label:nth-of-type(1) {
+  background-image: url("/img/hongkong.jpg");
+  background-size: cover;
+  background-position: 100% 100%;
+}
+section.highlight div.cards label:nth-of-type(2) {
+  background-image: url("/img/bangkok.jpg");
+  background-size: cover;
+  background-position: 100% 40%;
+}
+section.highlight div.cards label:nth-of-type(3) {
+  background-image: url("/img/tokyo.jpg");
+  background-size: cover;
+  background-position: 72.5% 0%;
+}
+section.highlight div.cards label:nth-of-type(4) {
+  background-image: url("/img/singapore.jpg");
+  background-size: cover;
+  background-position: 40% 0%;
+}
+section.highlight div.cards label:nth-of-type(5) {
+  background-image: url("/img/shanghai.jpg");
+  background-size: cover;
+  background-position: 100% 30%;
+}
+
+
+
+
+
 section.highlight div.dots {
   display: flex;
   justify-content: center;
@@ -215,7 +248,7 @@ section.highlight div.dots label {
 
 
 main section.content1 {
-  background-color: rgb(255, 219, 161);
+  background-color: #f2e5d9;
   height: auto;
 }
 section.content1 div.content_box > h2 {
