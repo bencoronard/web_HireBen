@@ -95,23 +95,49 @@ section.highlight div.cards label {
   height: 80%;
   max-width: 75%;
   aspect-ratio: 0.7;
-  border-radius: 5px;
   background-color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 1000ms;
+}
+section.highlight div.cards label article {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  padding: 7.5%;
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
-section.highlight div.cards label > h2 {
+section.highlight div.cards label article h2 {
   text-align: center;
   text-transform: uppercase;
-  font-size: clamp(0.5rem,10vw,2.5rem);
+  font-size: clamp(0.3rem,min(7.5vw,7.5vh),2.5rem);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.8);
-  /* background-color: rgba(0, 0, 0, 0.4); */
-  /* border: 1px dashed red; */
+  flex-grow: 1;
+}
+section.highlight div.cards label article > * {
+  opacity: 0.3;
+  transition: 1000ms;
+}
+section.highlight div.cards label article div.content {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(0.3rem,5vw,1rem);
+}
+section.highlight div.cards label article div.content h3 {
+  font-weight: 400;
+}
+section.highlight div.cards label article div.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+section.highlight div.cards label article div.skills span.skill {
+  text-align: center;
+  border: 2px solid rgba(255,255,255,0.6);
+  padding: 0 0.5em;
+  border-radius: 1em;
+  margin: 1%;
 }
 section.highlight div.cards label:nth-of-type(2) {
   background-image: url("/img/hongkong.jpg");
@@ -178,6 +204,15 @@ section.highlight div.dots label {
 {
   z-index: 3;
   box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.75);
+}
+#t-1:checked ~ div.cards label[for="t-1"] article > *,
+#t-2:checked ~ div.cards label[for="t-2"] article > *,
+#t-3:checked ~ div.cards label[for="t-3"] article > *,
+#t-4:checked ~ div.cards label[for="t-4"] article > *,
+#t-5:checked ~ div.cards label[for="t-5"] article > *
+{
+  opacity: 1;
+  transition: 1000ms;
 }
 #t-3:checked ~ div.cards label[for="t-2"],
 #t-4:checked ~ div.cards label[for="t-3"],
@@ -512,8 +547,6 @@ footer div.content_box {
   margin: 0 auto;
   color: #fff;
 }
-
-
 footer div.footer_items {
   display: flex;
   flex-direction: column;
@@ -522,7 +555,7 @@ footer div.footer_items {
   /* justify-content: space-between; */
 }
 footer div.footer_items > * { 
-  /* border: 1px dashed blueviolet; */
+  border: 1px dashed blueviolet;
   flex-basis: 33%;
   flex-grow: 1;
 }
@@ -532,25 +565,20 @@ footer div.footer_items p {
 }
 
 footer div.logo {
-  display: flex;
-}
-/* footer div.logo > * {
-  border: 1px solid red;
-} */
-footer div.icon_wrapper {
-  width: clamp(1rem,10vw,3rem);
-}
-footer div.icon_wrapper svg {
-  fill: var(--c-link);
-}
-
-footer section.media_links span {
-  font-weight: 700;
-  font-size:clamp(0.5rem,5vw,2.5rem);
-}
-/* footer section.media_links p {
   border: 1px solid greenyellow;
-} */
+  padding: 2%;
+}
+footer div.logo div.icon_wrapper {
+  border: 1px dashed red;
+  width: 50%;
+}
+footer div.logo div.icon_wrapper img {
+  height: 100%;
+  width: 100%;
+}
+footer section.media_links p {
+  border: 1px solid greenyellow;
+}
 
 footer section.nav > span {
   font-weight: 700;

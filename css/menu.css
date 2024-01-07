@@ -15,6 +15,9 @@ nav div.icon_wrapper {
   height: 100%;
   padding: 20%;
 }
+#nav_logo {
+  padding: 15%;
+}
 nav div.icon_wrapper svg {
   fill: var(--c-link);
 }
