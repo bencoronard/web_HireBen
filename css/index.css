@@ -1,10 +1,17 @@
+html {
+  scroll-snap-type: y proximity;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-padding-top: clamp(1.5rem,20vw,var(--h-header));
+}
 main {
   padding-top: clamp(1.5rem,20vw,var(--h-header));
 }
-main section {
+main > section {
   height: min(100vh,200vw);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
-
 
 main section.hero {
   position: relative;
